@@ -1,0 +1,13 @@
+<h1>First Name</h1>
+<div class="form-group">
+    <label for="usr">Username:</label>
+    <input type="text" class="form-control" id="firstName" name="firstName" #firstName>
+  </div>
+  <h2>Last Name</h2>
+  <div class="form-group">
+    <label for="chnlName">Channel:</label>
+    <input type="channelName" class="form-control" id="lastName" name="lastName" #lastName>
+    <button (click) ="createChannel(firstName.value, lastName.value)" type="button" class="btn btn-light">Submit</button>
+  </div>
+  <p>OR</p>
+    <button (click) ="joinChannel()" type="button" class="btn btn-light">Join Channels</button>
