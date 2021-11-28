@@ -17,6 +17,8 @@ export class ChannelMessageComponent implements OnInit {
   ngOnInit(){
   }
 
+
+
   joinClick(channelname: string)
   {
     this._router.navigate(['channel/' + channelname]);

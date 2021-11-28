@@ -31,11 +31,15 @@ export class ChatUIComponent implements OnInit {
     this.firstService.postMessage(this.chatMessage).subscribe(() => {
     });
 
+      // I had to set a delay to be able to finish the post request.
+      setTimeout(() => window.location.reload(), 53);
   }
+
 
   delete()
   {
     this.firstService.deleteChannel(this._router.url.substring(this._router.url.lastIndexOf("/") + 1)).subscribe();
     this._router.navigate(['channel']);
+    setTimeout(() => window.location.reload(), 80);
   }
 }

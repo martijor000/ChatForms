@@ -12,7 +12,7 @@ export class UserUIComponent implements OnInit {
 
   @Input() userMessage: ChatMessage = {
     username: "",
-    message: "Testing",
+    message: "Welcome to Martin Chat!",
     id: "",
     created_on: new Date,
     updated_on: new Date
@@ -30,7 +30,10 @@ export class UserUIComponent implements OnInit {
       this.userMessage.username = firstName.charAt(0) + lastName;
       this.firstService.postChannel(this.userMessage).subscribe((data) => {
       });
-      this._router.navigate(['channel/' + firstName.charAt(0) + lastName]);
+
+      setTimeout(() => {
+        this._router.navigate(['channel/' + firstName.charAt(0) + lastName]);
+      }, 500);
     }
     else{
       window.alert("Please fill in all the fields");

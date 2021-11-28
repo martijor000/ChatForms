@@ -42,7 +42,6 @@ export class ChatMessageComponent implements OnInit {
   {
     this.storeMessage = oldMessage;
     this.show = true;
-    this.hide = false;
     console.log(this.storeMessage)
   }
 
@@ -76,8 +75,6 @@ export class ChatMessageComponent implements OnInit {
     var objMessage = 'message';
     this.msgs[index][objMessage] = newMessage;
     this.show = false;
-    this.hide = true;
-
     this.patchMsgs = this.msgs;
     console.log(this.patchMsgs)
     this.service.patchMessage(this.router.url.substring(this.router.url.lastIndexOf("/") + 1),this.patchMsgs).subscribe();

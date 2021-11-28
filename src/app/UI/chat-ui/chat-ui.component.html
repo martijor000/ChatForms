@@ -1,6 +1,6 @@
 <button (click)="delete()">Leave Channel</button>
 <app-chatList></app-chatList>
 <div class="form-group">
-    <input type="sendMessage" class="form-control" id="sendMessage" name="sendMessage" #sendMessage>
-    <button (click)="SendMessage(sendMessage.value)" type="button" class="btn btn-light">Submit</button>
+    <input type="sendMessage" placeholder="Type Message..." class="inp" id="sendMessage" name="sendMessage" #sendMessage>
+    <button (click)="SendMessage(sendMessage.value)" type="button" class="btn">Submit</button>
   </div>

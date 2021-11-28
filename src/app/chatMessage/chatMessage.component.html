@@ -1,12 +1,15 @@
 <div class="chat-message" *ngFor="let item of msgs"> 
   <div>{{item.username}}</div>
-    <div class="msg" *ngIf="hide">{{ item.message }}</div>
-    <div class="form-group">
-      <input *ngIf="show" type="edit" class="form-control" id="edit" name="edit" #editMe>
-      <button (click)="updateMessage()" *ngIf="show" >Submit</button>
-    </div>
+    <div class="msg">{{ item.message }}</div>
+
   <div>{{ item.id }}</div>
   <div>{{ item.created_on}}</div>
   <div>{{ item.updated_on}}</div>
   <div><button (click)="showHide(item.message)" >Edit</button></div>
+</div>
+<!--I wanted to have the form control show up over the messages and update a single post. Problem was it was updating only by the top button
+so I moved the layout for now just to show that patch works-->
+<div class="form-group">
+  <input *ngIf="show" type="edit" class="form-control" placeholder="Enter a new message..." id="edit" name="edit" #editMe>
+  <button (click)="updateMessage()" *ngIf="show" >Submit</button>
 </div>

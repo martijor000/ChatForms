@@ -44,7 +44,6 @@ export class FirstService {
 
   public deleteChannel(channelName: string)
   {
-    console.log(channelName)
     return this.http.delete(`${this.apiUrl}channel/` + channelName)
   }
 
