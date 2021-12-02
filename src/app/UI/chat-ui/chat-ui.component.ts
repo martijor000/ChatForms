@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FirstService } from 'src/app/services/first.service';
 import { Router } from '@angular/router';
-import { ChatMessage } from 'src/app/models/chat';
+import { IChatMessage } from 'src/app/models/chat';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-chat-ui',
@@ -12,28 +13,13 @@ export class ChatUIComponent implements OnInit {
 
   constructor(private _router: Router, private firstService: FirstService) { }
 
-  @Input() chatMessage: ChatMessage = {
-    username: "",
-    message: "",
-    id: "",
-    created_on: new Date,
-    updated_on: new Date
-  };  
 
 
-  ngOnInit(){
+
+  ngOnInit() : void{
   }
 
-  SendMessage(message: string)
-  {
-    this.chatMessage.username = this._router.url.substring(this._router.url.lastIndexOf("/") + 1);
-    this.chatMessage.message = message;
-    this.firstService.postMessage(this.chatMessage).subscribe(() => {
-    });
 
-      // I had to set a delay to be able to finish the post request.
-      setTimeout(() => window.location.reload(), 53);
-  }
 
 
   delete()

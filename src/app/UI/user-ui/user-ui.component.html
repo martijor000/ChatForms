@@ -1,10 +1,4 @@
 <h1>Welcome to Martin Chat!</h1>
-<div class="form-group">
-    <input type="text" placeholder="Enter First Name..." class="form-control" id="firstName" name="firstName" #firstName>
-  </div>
-  <div class="form-group">
-    <input type="channelName" placeholder="Enter Last Name..." class="form-control" id="lastName" name="lastName" #lastName>
-  </div>
-  <button (click) ="createChannel(firstName.value, lastName.value)" type="button" class="form-control">Create Channel</button>
+<app-login-editor></app-login-editor>
   <p>OR</p>
     <button (click) ="joinChannel()" type="button" class="form-control">Join Channels</button>

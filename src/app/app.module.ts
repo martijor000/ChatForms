@@ -11,6 +11,9 @@ import { UserUIComponent } from './UI/user-ui/user-ui.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ChannelListComponent } from './channel-list/channel-list.component';
 import { ChannelMessageComponent } from './channel-message/channel-message.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MessageEditorComponent } from './message-editor/message-editor.component';
+import { LoginEditorComponent } from './login-editor/login-editor.component';
 
 @NgModule({
   declarations: [		
@@ -21,12 +24,15 @@ import { ChannelMessageComponent } from './channel-message/channel-message.compo
       ChatUIComponent,
       UserUIComponent,
       ChannelListComponent,
-      ChannelMessageComponent
+      ChannelMessageComponent,
+      MessageEditorComponent,
+      LoginEditorComponent,
    ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [FirstService],
   bootstrap: [AppComponent]

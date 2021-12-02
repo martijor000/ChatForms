@@ -1,8 +1,8 @@
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
-import { Component, Input, OnInit, Type } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FirstService } from '../services/first.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ChatMessage } from '../models/chat';
+import { IChatMessage } from '../models/chat';
 
 
 @Component({

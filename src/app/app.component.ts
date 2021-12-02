@@ -1,7 +1,7 @@
 import { FirstService } from './services/first.service';
 import { Component, OnInit } from '@angular/core';
 import { interval, Observable } from 'rxjs';
-import { ChatMessage } from './models/chat';
+import { IChatMessage } from './models/chat';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ import { ChatMessage } from './models/chat';
 export class AppComponent implements OnInit {
   isLoaded: boolean = false;
 
-  data: ChatMessage[] = [];
+  data: IChatMessage[] = [];
 
   constructor(public service: FirstService) {}
 

@@ -1,4 +1,4 @@
-import { ChatMessage } from './../models/chat';
+import { IChatMessage } from './../models/chat';
 import { Injectable } from '@angular/core';
 import { interval, Observable, of, Subject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
@@ -10,14 +10,6 @@ import { IChannels } from '../models/channel';
 })
 export class FirstService {
 
-  public obs: Observable<number> = interval(5000);
-
-  public items: IChannels[] = [];
-
-  public Test: ChatMessage[] = [];
-
-  public data: any[] = [];
-
   private apiUrl = "http://73.19.65.35:3500/api/";
 
   constructor(private http: HttpClient) {}
@@ -26,19 +18,22 @@ export class FirstService {
     return this.http.get(this.apiUrl + "channel/");
   }
 
-  public getMessage(id: string): Observable<ChatMessage> {
-    return this.http.get<ChatMessage>(`${this.apiUrl}channel/${id}`);
+  public getMessage(id: string): Observable<IChatMessage> {
+    return this.http.get<IChatMessage>(`${this.apiUrl}channel/${id}`);
   }
 
-  public postChannel(body: ChatMessage){
-    return this.http.post(`${this.apiUrl}channel/${body.username}`, body)
+  public postChannel(body: IChatMessage, id: string){
+    return this.http.post(`${this.apiUrl}channel/${id}`, body)
   }
 
-  public postMessage(body: ChatMessage){
-    return this.http.post(`${this.apiUrl}channel/${body.username}`, body)
+  public postMessage(body: IChatMessage, id: string){
+    this.http.post(`${this.apiUrl}channel/${id}`, body).subscribe(data =>{
+      this.getMessage(id).subscribe();
+      location.reload();
+    })
   }
 
-  public patchMessage(bodyUrl: string, body: ChatMessage){
+  public patchMessage(bodyUrl: string, body: IChatMessage){
     return this.http.patch(`${this.apiUrl}channel/${bodyUrl}`, body)
   }
 
