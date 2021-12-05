@@ -1,9 +1,13 @@
-    <form [formGroup]="loginForm" (submit)="onSubmit()">
+   <div id="formContainer">
+   <form [formGroup]="loginForm" (submit)="onSubmit()">
     <div class="form-group" >
     <input type="text" placeholder="Enter First Name..." formControlName="firstName">
-  </div>
+  </div><br>
   <div class="form-group">
     <input type="channelName" placeholder="Enter Last Name..." formControlName="lastName">
-  </div>
-  <input type="submit">
+  </div><br>
+  <button type="submit" id="subButton">Create Channel</button>
+  <p>OR</p>
+    <button (click) ="joinChannel()" type="button" class="form-control">Join Channels</button>
     </form>
+   </div>

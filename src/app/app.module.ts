@@ -14,6 +14,7 @@ import { ChannelMessageComponent } from './channel-message/channel-message.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessageEditorComponent } from './message-editor/message-editor.component';
 import { LoginEditorComponent } from './login-editor/login-editor.component';
+import { PatchEditorComponent } from './patch-editor/patch-editor.component';
 
 @NgModule({
   declarations: [		
@@ -27,6 +28,7 @@ import { LoginEditorComponent } from './login-editor/login-editor.component';
       ChannelMessageComponent,
       MessageEditorComponent,
       LoginEditorComponent,
+      PatchEditorComponent,
    ],
   imports: [
     BrowserModule,

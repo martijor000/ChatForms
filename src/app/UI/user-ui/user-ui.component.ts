@@ -12,11 +12,9 @@ import { FirstService } from 'src/app/services/first.service';
 })
 export class UserUIComponent implements OnInit {
 
-  constructor(private _router: Router, private firstService: FirstService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
-  joinChannel(){
-      this._router.navigate(['channel']);
-  }
+  
 }

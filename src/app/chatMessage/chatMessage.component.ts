@@ -12,9 +12,9 @@ import { IChatMessage } from '../models/chat';
 })
 export class ChatMessageComponent implements OnInit {
 
-  public show:boolean = false;
-  public hide:boolean = true;
-  public storeMessage: string = "";
+  private storeMessage: string = "";
+  private sendMessage: string = "";
+  private buttonIndex: number = 0;
 
   @Input() msgs: any = {
     username: "",
@@ -38,23 +38,25 @@ export class ChatMessageComponent implements OnInit {
   ngOnInit(): void{
   }
 
-  showHide(oldMessage: string)
+  public showHide(oldMessage: string) : void
   {
     this.storeMessage = oldMessage;
-    this.show = true;
-    console.log(this.storeMessage)
+    this.buttonIndex = this.getIndex();
+    document.getElementsByClassName("patchMe")[this.buttonIndex].setAttribute("style", "display: block;");
+    document.getElementsByClassName("msg")[this.buttonIndex].setAttribute("style", "display: none;");
   }
 
-  updateMessage(){
+  inputMessage(inputMsg: string) : void
+  {
+    this.sendMessage = inputMsg;
+    this.updateMessage();
+    document.getElementsByClassName("patchMe")[this.buttonIndex].setAttribute("style", "display: none;");
+    document.getElementsByClassName("msg")[this.buttonIndex].setAttribute("style", "display: block;");
+  }
 
-    let newMessage = (<HTMLInputElement>document.getElementById("edit")).value;
-
-    // It was really hard for me to figure out how to take out the messages of the array msgs. So I found this function on the web
-    // https://stackoverflow.com/questions/19590865/from-an-array-of-objects-extract-value-of-a-property-as-array
-    // Below they had alternatives to map but maybe we can go further into depth with maping in class if we have time.
-    // What this function is doing is looping through the array of msgs and pushing the message property of each into the array of output. 
-
-    function getFields(input: Array<any>, field: string) {
+  getIndex() : number
+  {
+    function getFields(input: Array<any>, field: string) { 
       var output = [];
       for (var i=0; i < input.length ; ++i)
           output.push(input[i][field]);
@@ -72,9 +74,13 @@ export class ChatMessageComponent implements OnInit {
         index = i;
       }
     }
+    return index;
+  }
+
+  updateMessage(){
     var objMessage = 'message';
-    this.msgs[index][objMessage] = newMessage;
-    this.show = false;
+    console.log(this.sendMessage)
+    this.msgs[this.buttonIndex][objMessage] = this.sendMessage;
     this.patchMsgs = this.msgs;
     console.log(this.patchMsgs)
     this.service.patchMessage(this.router.url.substring(this.router.url.lastIndexOf("/") + 1),this.patchMsgs).subscribe();

@@ -1,17 +1,18 @@
-<!--Work on this file using a form group to reduce code and improve patch functionality-->
+<!--I realized the reason why I was having issues with displaying the element only was because *ngIF takes the DOM properties away.
+Because of those reasons I was not able to grab an array of app-patch, would come back as undefined. Now I'm about to determine...
+What index to display based on the button click -->
 
 <div class="chat-message" *ngFor="let item of msgs"> 
   <div>{{item.username}}</div>
-    <div class="msg">{{ item.message }}</div>
+    <div class="msg" style="display: block;">{{ item.message }}</div>
+      <app-patch-editor 
+      class="patchMe"
+      style="display: none;"
+      (newItemEvent)="inputMessage($event)">
+    </app-patch-editor>
 
   <div>{{ item.id }}</div>
   <div>{{ item.created_on}}</div>
   <div>{{ item.updated_on}}</div>
-  <div><button (click)="showHide(item.message)" >Edit</button></div>
-</div>
-<!--I wanted to have the form control show up over the messages and update a single post. Problem was it was updating only by the top button
-so I moved the layout for now just to show that patch works-->
-<div class="form-group">
-  <input *ngIf="show" type="edit" class="form-control" placeholder="Enter a new message..." id="edit" name="edit" #editMe>
-  <button (click)="updateMessage()" *ngIf="show" >Submit</button>
+  <div><button (click)="showHide(item.message)" class="edit">Edit</button></div>
 </div>

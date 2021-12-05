@@ -47,4 +47,8 @@ export class LoginEditorComponent implements OnInit {
     });
   }
 
+  joinChannel(){
+    this._router.navigate(['channel']);
+}
+
 }

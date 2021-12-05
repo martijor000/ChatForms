@@ -1,29 +1,10 @@
-h1{
+#container{
+    background-color: darkcyan;
+    padding: 5%;
+}
+
+h1 {
+    text-align: center;
     margin-top: 10%;
     font-size: 300%;
-}
-
-button.form-control{
-    margin-top: 2%;
-}
-
-
-.form-control{ 
-    padding-top: 2%;
-    padding-right: 10%;
-    margin: auto;
-    display: block;
-}
-
-p{
-    margin: 0%;
-    margin-top: 2%;
-}
-
-h1, p{
-    text-align: center;
-}
-
-.form-control.placeholders{
-    align-items: center;
 }

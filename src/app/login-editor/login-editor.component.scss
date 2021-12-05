@@ -1,29 +1,13 @@
-h1{
-    margin-top: 10%;
-    font-size: 300%;
-}
-
-button.form-control{
+#subButton{
     margin-top: 2%;
 }
 
-
-.form-control{ 
-    padding-top: 2%;
-    padding-right: 10%;
-    margin: auto;
-    display: block;
-}
-
-p{
-    margin: 0%;
-    margin-top: 2%;
-}
-
-h1, p{
+#formContainer {
     text-align: center;
-}
+  }
 
-.form-control.placeholders{
-    align-items: center;
-}
+.form-group {
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+  }
