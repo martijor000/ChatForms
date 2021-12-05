@@ -1,5 +1,6 @@
 <div class="channel-message"> 
-  <ul class="chat-list">
-    <div class="channel"><p id="channelname" name="channelname" #channelname>{{channels}}</p><button (click)=joinClick(channelname.innerHTML)>Join</button></div>
-  </ul>
+  <div class="chat-list">
+    <div class="channel"id="channelname" name="channelname" #channelname>{{channels}} : </div>
+    <div><button class="joinButton" (click)=joinClick(channelname.innerHTML)>Join</button></div>
+  </div>
 </div>

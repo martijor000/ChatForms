@@ -14,10 +14,14 @@ export class LoginEditorComponent implements OnInit {
   
   constructor(private _fb : FormBuilder, private _firstService : FirstService, private _router: Router) {}
 
+  @Input() name: any = {
+    first: "",
+    last: ""
+  };
 
   loginForm: FormGroup = this._fb.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required]
+    firstName: [this.name.first, Validators.required],
+    lastName: [this.name.last, Validators.required]
   })
 
   channelName : string = "";
