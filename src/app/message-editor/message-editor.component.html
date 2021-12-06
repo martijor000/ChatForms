@@ -1,5 +1,5 @@
 <form [formGroup]="messageForm" (submit)="onSubmit()">
-<input type="text" formControlName="user"><br>
-<textarea rows="3" cols="50" formControlName="newMessage"></textarea>
-<input type="submit">
+<input type="text" id="user" formControlName="user" placeholder="Enter Your Name.">
+<textarea rows="3" cols="50" formControlName="newMessage" placeholder="Enter New Message."></textarea>
+<input type="submit" id="btn" [disabled]="messageForm.invalid">
 </form>

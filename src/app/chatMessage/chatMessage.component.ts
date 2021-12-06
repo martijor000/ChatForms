@@ -79,10 +79,8 @@ export class ChatMessageComponent implements OnInit {
 
   updateMessage(){
     var objMessage = 'message';
-    console.log(this.sendMessage)
     this.msgs[this.buttonIndex][objMessage] = this.sendMessage;
     this.patchMsgs = this.msgs;
-    console.log(this.patchMsgs)
     this.service.patchMessage(this.router.url.substring(this.router.url.lastIndexOf("/") + 1),this.patchMsgs).subscribe();
 
   }

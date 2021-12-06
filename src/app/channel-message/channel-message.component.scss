@@ -1,19 +1,19 @@
 .channel-message {
     border: 1px;
     border-radius: 20px;
-    background-color: rgb(230, 241, 248);
+    background-color: rgb(155, 215, 255);
     margin: auto;
-    width: 50%;
+    width: 80%;
     margin-bottom: 1%;
     padding: 2em;
 }
 
 .channel {
-    font-weight: bold;
     color: rgb(63, 63, 63);
     font-size:x-large;
     margin-left: 2%;
 }
+
 
 .chat-list{
     display: flex;
@@ -29,8 +29,7 @@ button{
     border: none;
     text-align: center;
     padding: 40%;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
 }
+
 

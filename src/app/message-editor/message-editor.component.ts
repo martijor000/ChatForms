@@ -20,9 +20,18 @@ export class MessageEditorComponent implements OnInit {
     });
   }
 
+
+  post: IChatMessage ={
+    username: "",
+      message: "",
+      id: "",
+      created_on: new Date,
+      updated_on: new Date
+  }
+
   messageForm : FormGroup = this._fb.group({
-  user: ['', Validators.required],
-  newMessage: ['', Validators.required]
+  user: [this.post.username, Validators.required],
+  newMessage: [this.post.message, Validators.required]
 
   });
 

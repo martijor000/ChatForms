@@ -45,7 +45,6 @@ export class LoginEditorComponent implements OnInit {
       updated_on: new Date
     }
     
-    console.log(this.loginForm.value)
     this._firstService.postChannel(post, this.channelName).subscribe((data) => {
       this._router.navigate(['channel/' + this.channelName]);
     });

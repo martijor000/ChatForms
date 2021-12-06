@@ -16,7 +16,7 @@ export class PatchEditorComponent implements OnInit {
   constructor(private _fb : FormBuilder) { }
 
   editMessage: FormGroup = this._fb.group({
-    editedMessage: ['', Validators.required],
+    editedMessage: [this.value, Validators.required],
   })
 
   ngOnInit(): void {

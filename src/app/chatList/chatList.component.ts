@@ -14,7 +14,6 @@ export class ChatListComponent implements OnInit {
   constructor(public service: FirstService, private router: ActivatedRoute) {
     this.router.params.subscribe(params => {
       this.service.getMessage(params['id']).subscribe(data => {
-        console.log(data)
         this.chatmsgs.push(data);
       });
     });

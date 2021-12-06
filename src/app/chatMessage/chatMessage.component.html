@@ -3,16 +3,19 @@ Because of those reasons I was not able to grab an array of app-patch, would com
 What index to display based on the button click -->
 
 <div class="chat-message" *ngFor="let item of msgs"> 
-  <div>{{item.username}}</div>
+  <div class ="user">{{item.username}}</div>
+  <hr>
+  <div class="msgContainer">
     <div class="msg" style="display: block;">{{ item.message }}</div>
       <app-patch-editor 
       class="patchMe"
       style="display: none;"
       (newItemEvent)="inputMessage($event)">
     </app-patch-editor>
-
-  <div>{{ item.id }}</div>
+    <br>
   <div>{{ item.created_on}}</div>
   <div>{{ item.updated_on}}</div>
+    <br>
   <div><button (click)="showHide(item.message)" class="edit">Edit</button></div>
+  </div>
 </div>
