@@ -1,21 +1,12 @@
-#container{
-
-    background-color: lightskyblue;
-    height: 40%;
-    padding: 4%;
-}
-
 #backgroundImage
 {
-background-image: url(/assets/images/pexels-kampus-production-5935228.jpg);
-    
+    background-image: url(/assets/images/pexels-kampus-production-5935228.jpg);
     background-size:cover;
     height: 100%;
 }
 
 h1 {
     text-align: center;
-    text-shadow: black 2px 2px 2px;
     font-size: 300%;
-    color: white;
+    color: rgb(97, 192, 255);
 }

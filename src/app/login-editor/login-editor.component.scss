@@ -2,13 +2,27 @@
     margin-top: 2%;
 }
 
-#formContainer {
-    text-align: center;
+#formContainer{
 
-  }
+  background-color: white;
+  border: solid lightgray;
+  border-radius: 2%;
+  height: 40%;
+  padding: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 15%;
+  float: right;
+}
 
-.form-group {
-    line-height: 1.5;
-    display: inline-block;
-    vertical-align: middle;
-  }
+
+button{
+  margin-top: 2%;
+}
+
+input, button{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4%;
+
+}
